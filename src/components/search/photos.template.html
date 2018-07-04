@@ -1,0 +1,39 @@
+<div class="grid-wrapper">
+  <div class="input-wrapper">
+    <div class="btn-group" uib-dropdown keyboard-nav>
+      <a href uib-dropdown-toggle class="select-lang">
+        {{ $ctrl.perPage }}
+        <span class="caret"></span>
+      </a>
+      <!-- </button> -->
+      <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="simple-btn-keyboard-nav">
+        <!-- <li class="divider"></li> -->
+        <li role="menuitem">
+          <a href="" ng-click="$ctrl.searchPhotos($ctrl.query, $ctrl.currentPage, 10)">10</a>
+        </li>
+        <li role="menuitem">
+          <a href="" ng-click="$ctrl.searchPhotos($ctrl.query, $ctrl.currentPage, 20)">20</a>
+        </li>
+        <li role="menuitem">
+          <a href="" ng-click="$ctrl.searchPhotos($ctrl.query, $ctrl.currentPage, 30)">30</a>
+        </li>
+      </ul>
+
+    </div>
+    <input ng-model="$ctrl.query" class="input" ng-keyup="$event.keyCode == 13 && $ctrl.searchPhotos($ctrl.query)" />
+    <button id="search" ng-click="$ctrl.searchPhotos($ctrl.query)">
+      <i data-feather="search" class="icon"></i>
+    </button>
+  </div>
+  <div>
+    <ul uib-pagination total-items="$ctrl.totalItems" items-per-page="$ctrl.perPage" ng-model="$ctrl.currentPage" class="pagination-sm"
+      boundary-link-numbers="true" ng-change="$ctrl.pageChanged()" previous-text="{{'Previous' | translate}}" next-text="{{'Next' | translate}}"
+      uiBroadcastTranslate></ul>
+  </div>
+  <div class="grid" id="grid">
+    <div ng-repeat="photo in $ctrl.photos" class="item" id="item">
+      <img ng-src="{{photo.regular }}" alt="">
+    </div>
+  </div>
+
+</div>

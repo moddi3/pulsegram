@@ -1,0 +1,17 @@
+{
+  "extends": ["airbnb-base", "plugin:angular/johnpapa"],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 2018
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "rules": {
+    "angular/file-name": [0],
+    "angular/function-type": [0],
+    "angular/no-service-method": [0]
+  }
+}

@@ -1,0 +1,45 @@
+<html ng-app="app">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#2a2a2a" />
+  <title>Pulsegram</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body ng-controller="MainController as $ctrl">
+  <uiBroadcastTranslate></uiBroadcastTranslate>
+  <div style="display: flex;">
+
+    <div class="btn-group" uib-dropdown keyboard-nav>
+      <a href uib-dropdown-toggle class="select-lang">
+        {{ $ctrl.lang | uppercase}}
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="simple-btn-keyboard-nav">
+        <li role="menuitem">
+          <a href="" ng-click="$ctrl.changeLanguage('de')" translate="BUTTON_LANG_DE"></a>
+        </li>
+        <li role="menuitem">
+          <a href="" ng-click="$ctrl.changeLanguage('en')" translate="BUTTON_LANG_EN"></a>
+        </li>
+      </ul>
+    </div>
+    <uib-tabset active="active" justified="true">
+
+      <uib-tab index="0" ui-sref="home" heading="{{'Home' | translate}}"></uib-tab>
+
+      <uib-tab index="1" ui-sref="search" heading="{{'Search' | translate}}"></uib-tab>
+
+    </uib-tabset>
+  </div>
+  <ui-view></ui-view>
+  <script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.js"></script>
+</body>
+
+</html>
