@@ -12,7 +12,7 @@ class Photos {
   }
 
   $onInit() {
-    this.searchPhotos(this.query, this.perPage);
+    this.searchPhotos(this.query, this.currentPage, this.perPage);
     feather.replace();
     // this.$scope.$watch(
     //   () => this.query,
