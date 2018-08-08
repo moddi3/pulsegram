@@ -6,8 +6,8 @@
   "author": "moddi3",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --mode development --host 192.168.1.26 --port 8080",
-    "build": "webpack -p"
+    "dev": "webpack-dev-server --mode development --host 192.168.1.26 --port 8080",
+    "start": "webpack -p"
   },
   "dependencies": {
     "@uirouter/angularjs": "^1.0.18",
